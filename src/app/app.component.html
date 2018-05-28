@@ -6,7 +6,11 @@
 </div>
 
 <div>
-  <app-user></app-user>
+  <app-user xyz="XYZ" [user]="user" [abc]="title">
+    <header>Some header Info</header>
+    <main class="my-class">Main Contents</main>
+    <footer>Footer Info</footer>
+  </app-user>
 </div>
 
 
