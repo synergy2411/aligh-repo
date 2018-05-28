@@ -8,6 +8,7 @@ import { Component,
     AfterViewInit,
     AfterViewChecked,
     OnDestroy } from '@angular/core';
+import { User } from '../model/user';
 
 @Component({
     selector : 'app-user',
@@ -29,10 +30,11 @@ AfterViewChecked,
 OnDestroy{
 
     @Input("xyz") xyz : string;
-    @Input("user") user : any;
+    @Input("users") users : User;
     @Input("abc") title : string;
-
+    tab : any;
     moreInfo(user){
+        this.tab = 2; 
         alert(`${user.firstName} is working with ${user.company}!!`);
     }
     constructor(){console.log("Constructor Called!")}

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { USER_DATA } from './data/mocks';
+import { User } from './model/user';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +9,10 @@ import { USER_DATA } from './data/mocks';
 })
 export class AppComponent {
   title = 'Angular!';
-  user : any;
+  users : User[];
 
-ngOnInit(){
-   this.user = USER_DATA;
-}
+  ngOnInit(){
+    this.users = USER_DATA;
+  }
 
 }
