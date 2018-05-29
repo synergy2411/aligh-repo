@@ -19,9 +19,18 @@
                 </button>
         </div>
         <div class="col-md-10 col-sm-10">
-                <h1 appHighlight> {{ user.firstName }} {{ user.lastName }}</h1>
-                <p  [ngStyle]="myStyle" 
-                    *ngIf="user.isWorking;else ElseTemplate"> Income  : {{ user.income }}</p>
+                <h1 appHighlight 
+                    [defaultColor]="'yellow'"> {{ user.firstName }} {{ user.lastName }}</h1>
+               
+                <!-- <ng-template [ngIf]="condition"></ng-template> -->
+                <!-- <p  [ngStyle]="myStyle" 
+                    *ngIf="user.isWorking;else ElseTemplate"> Income  : {{ user.income }}</p> -->
+                
+                    <p  [ngStyle]="myStyle" 
+                        *appUnless="!user.isWorking"> 
+                    Income  : {{ user.income }}
+                    </p>
+
                 <p [ngClass]="allClasses">Date OF Birth : <span [innerHTML]="user.dob"> </span></p>
                 <em class=pull-rigth>
                     Total Votes : {{ user.vote }}
