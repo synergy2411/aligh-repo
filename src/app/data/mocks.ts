@@ -8,7 +8,8 @@ export const USER_DATA : User[] =  [{
     company : "Microsoft",
     isWorking : true,
     img : 'assets/images/bill.jpg', 
-    vote : 120
+    vote : 120,
+    mobile : 9877654321
 },{
     firstName : "Steve",
     lastName : "Jobs",
@@ -17,7 +18,8 @@ export const USER_DATA : User[] =  [{
     company : "Apple",
     isWorking : false,
     img : 'assets/images/steve.png', 
-    vote : 180
+    vote : 180,
+    mobile : 9877654321
 },{
     firstName : "Tim B.",
     lastName : "Lee",

@@ -8,4 +8,5 @@ export interface User {
     img : string; 
     vote : number;
     address? : string;
+    mobile? : number;
 }

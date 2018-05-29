@@ -22,7 +22,7 @@
         </div>
         <div class="col-md-10 col-sm-10">
                 <h1 appHighlight 
-                    [defaultColor]="'yellow'"> {{ user.firstName }} {{ user.lastName }}</h1>
+                    [defaultColor]="'yellow'"> {{ user.firstName | uppercase }} {{ user.lastName | titlecase }}</h1>
                
                 <!-- <ng-template [ngIf]="condition"></ng-template> -->
                 <!-- <p  [ngStyle]="myStyle" 
@@ -30,10 +30,12 @@
                 
                     <p  [ngStyle]="myStyle" 
                         *appUnless="!user.isWorking"> 
-                    Income  : {{ user.income }}
+                    Income  : {{ user.income | currency:'CAD':'symbol':'4.0'  }}
                     </p>
 
-                <p [ngClass]="allClasses">Date OF Birth : <span [innerHTML]="user.dob"> </span></p>
+                <p [ngClass]="allClasses">
+                    Date OF Birth : <span [innerHTML]="user.dob | date : 'MM/dd/yyyy'"> </span></p>
+                <p>Contact Number : {{user.mobile | nationalCode : '80' }}</p>
                 <em class=pull-rigth>
                     Total Votes : {{ user.vote }}
                     <!-- PB + EB -->
@@ -66,3 +68,5 @@
 <ng-content select ="footer"></ng-content>
 
 <!-- ng g d <DIRECTIVE_NAME> -->
+
+    <!-- {{users | json}} -->
