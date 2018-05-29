@@ -19,9 +19,10 @@
                 </button>
         </div>
         <div class="col-md-10 col-sm-10">
-                <h1> {{ user.firstName }} {{ user.lastName }}</h1>
-                <p *ngIf="user.isWorking;else ElseTemplate"> Income  : {{ user.income }}</p>
-                <p>Date OF Birth : <span [innerHTML]="user.dob"> </span></p>
+                <h1 appHighlight> {{ user.firstName }} {{ user.lastName }}</h1>
+                <p  [ngStyle]="myStyle" 
+                    *ngIf="user.isWorking;else ElseTemplate"> Income  : {{ user.income }}</p>
+                <p [ngClass]="allClasses">Date OF Birth : <span [innerHTML]="user.dob"> </span></p>
                 <em class=pull-rigth>
                     Total Votes : {{ user.vote }}
                     <!-- PB + EB -->
@@ -51,8 +52,6 @@
     <div *ngSwitchDefault>Default Case</div>
 </div>
 
-
-
-
-
 <ng-content select ="footer"></ng-content>
+
+<!-- ng g d <DIRECTIVE_NAME> -->

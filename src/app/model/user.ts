@@ -7,4 +7,5 @@ export interface User {
     isWorking : boolean;
     img : string; 
     vote : number;
+    address? : string;
 }
