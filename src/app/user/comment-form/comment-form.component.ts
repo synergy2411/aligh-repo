@@ -8,7 +8,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./comment-form.component.css']
 })
 export class CommentFormComponent implements OnInit {
-
+  tab : number = 1;
   @Input("comments") comments : Comment[];
 
   addComment(f : NgForm){

@@ -1,45 +1,61 @@
-
-
-<ul class="list-group">
-  <li *ngFor="let comment of comments" class="list-group-item">
-    <p>Stars : {{ comment.stars }}</p>
-    <blockquote>
-      {{comment.body}} by <cite> {{ comment.author }}</cite>
-    </blockquote>
+<ul class="list-unstyled panel">
+  <li class="panel-body">
+    <a (click)="tab=1" >Show All Comments</a>
+  </li>
+  <li class="panel-body">
+    <a (click)="tab=2">Add New Comments</a>
   </li>
 </ul>
 
 
-
+<div [ngSwitch]="tab">
+  <div *ngSwitchCase="'1'">
+      <ul class="list-group">
+          <li *ngFor="let comment of comments" class="list-group-item">
+            <p>Stars : {{ comment.stars }}</p>
+            <blockquote>
+              {{comment.body}} by <cite> {{ comment.author }}</cite>
+            </blockquote>
+          </li>
+        </ul>
+  </div>
+  <div *ngSwitchCase="'2'">
+    
 
 <form #f = "ngForm">
-  <div class="form-group">
-  Stars : 
-    <select class="form-control" name="stars" ngModel required>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-    </select>
-    <br>
-    <textarea name="body" 
-      class="form-control" 
-      cols="30" 
-      rows="10"
-      ngModel 
-      required 
-      minlength="8"></textarea>
-    <br>
-    <input type="email" 
-      name="author" 
-      class="form-control"
-      ngModel
-      required
-      minlength="6">
-    <br>
-    <button 
-      class="btn btn-info"
-      (click)="addComment(f)" [disabled]="f.invalid">Add Comment</button>
+    <div class="form-group">
+    Stars : 
+      <select class="form-control" name="stars" ngModel required>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <br>
+      <textarea name="body" 
+        class="form-control" 
+        cols="30" 
+        rows="10"
+        ngModel 
+        required 
+        minlength="8"></textarea>
+      <br>
+      <input type="email" 
+        name="author" 
+        class="form-control"
+        ngModel
+        required
+        minlength="6">
+      <br>
+      <button 
+        class="btn btn-info"
+        (click)="addComment(f)" [disabled]="f.invalid">Add Comment</button>
+    </div>
+  </form>
   </div>
-</form>
+</div>
+
+
+
+

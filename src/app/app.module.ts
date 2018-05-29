@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
@@ -10,6 +10,7 @@ import { NationalCodePipe } from './pipes/country-code.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { FilterComponent } from './filter/filter.component';
 import { CommentFormComponent } from './user/comment-form/comment-form.component';
+import { SignupComponent } from './auth/signup/signup.component';
 
 @NgModule({
   declarations: [   //Components, Pipes & Directives
@@ -20,11 +21,13 @@ import { CommentFormComponent } from './user/comment-form/comment-form.component
     NationalCodePipe,
     FilterPipe,
     FilterComponent,
-    CommentFormComponent
+    CommentFormComponent,
+    SignupComponent
   ],
   imports: [      //All Modules : Built-in & Custom
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],   //Services 
   bootstrap: [AppComponent]

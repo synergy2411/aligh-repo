@@ -1,0 +1,43 @@
+<form (ngSubmit)="onSubmit()" 
+  class="well" 
+  [formGroup]="registerForm">
+  
+  <h1 class="text-center text-primary"></h1>
+  <div class="form-group">
+    <label for="username">Username : </label>
+    <input type="text" 
+      name="username" 
+      class="form-control"
+      [formControl]="username">
+
+      <div [hidden]="username.valid || username.pristine">
+        Something Wrong happened!
+        <div [hidden]="!username.hasError('required')">
+          Username is mandatory Field!
+        </div>
+        <div [hidden]="!username.hasError('minlength')">
+          Minimum length should be 5 character!
+        </div>
+      </div>
+
+  </div>
+  <div class="form-group">
+    <label for="password">Password : </label>
+    <input type="password" 
+      name="password" 
+      class="form-control"
+      [formControl]="password">
+
+      <div [hidden]="password.valid || password.pristine">
+        Something Wrong happened!
+        <div [hidden]="!password.hasError('required')">
+          Password is mandatory Field!
+        </div>
+        <div [hidden]="!password.hasError('needExclamation')">
+          Password must have Exclamation Mark!
+        </div>
+      </div>
+
+  </div>
+  <button type="submit" class="btn btn-success">Register</button>
+</form>
