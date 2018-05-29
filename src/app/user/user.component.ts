@@ -22,14 +22,7 @@ import { DataService } from '../services/data-service';
     styleUrls : [`./user.component.css`],
     providers : [DataService]
 })
-export class UserComponent implements OnInit,
-OnChanges,
-DoCheck,
-AfterContentInit,
-AfterContentChecked,
-AfterViewInit,
-AfterViewChecked,
-OnDestroy{
+export class UserComponent implements OnInit{
 
     @Input("xyz") xyz : string;
     @Input("users") users : User;
@@ -62,12 +55,12 @@ OnDestroy{
     }
 
    // constructor(){console.log("Constructor Called!")}
-    ngOnInit(){console.log("ngOnInit Called!");}
-    ngOnChanges(changes : SimpleChanges){console.log("ngOnChanges Called!", changes);}
-    ngDoCheck(){console.log("ngDoCheck Called!");}
-    ngAfterContentInit(){console.log("ngAfterContentInit Called!");}
-    ngAfterContentChecked(){console.log("ngAfterContentChecked Called!");}
-    ngAfterViewInit(){console.log("ngAfterViewInit Called!");}
-    ngAfterViewChecked(){console.log("ngAfterViewChecked Called!");}
-    ngOnDestroy(){console.log("ngOnDestroy Called!");}
+    // ngOnInit(){console.log("ngOnInit Called!");}
+    // ngOnChanges(changes : SimpleChanges){console.log("ngOnChanges Called!", changes);}
+    // ngDoCheck(){console.log("ngDoCheck Called!");}
+    // ngAfterContentInit(){console.log("ngAfterContentInit Called!");}
+    // ngAfterContentChecked(){console.log("ngAfterContentChecked Called!");}
+    // ngAfterViewInit(){console.log("ngAfterViewInit Called!");}
+    // ngAfterViewChecked(){console.log("ngAfterViewChecked Called!");}
+    // ngOnDestroy(){console.log("ngOnDestroy Called!");}
 }

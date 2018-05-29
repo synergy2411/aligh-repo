@@ -21,7 +21,13 @@ export class AppComponent {
   }
   constructor(public dataService : DataService){}
   ngOnInit(){
-    this.users= this.dataService.getUserData();
+   //this.users=  this.dataService.getUserData();
+   this.dataService.getUserData()
+      .subscribe(
+        (users)=>this.users = users,
+        (error)=>console.log("ERROR", error),
+        ()=>console.log("COMPLETED!!")
+      )
   }
 
 }
