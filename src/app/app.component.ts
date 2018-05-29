@@ -11,6 +11,10 @@ export class AppComponent {
   title = 'Angular!';
   users : User[];
 
+  customEventHandler(eventdata){
+    this.title = eventdata
+  }
+
   ngOnInit(){
     this.users = USER_DATA;
   }

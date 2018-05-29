@@ -2,6 +2,8 @@
 <ng-content select="header"></ng-content>
 <ng-content select=".my-class"></ng-content>
 
+<input type="text" (keyup)="onKeyUp(childCtrl.value)" #childCtrl>
+
 <h2>Data from Parent : {{ title }}</h2>
 
 <div class="container">

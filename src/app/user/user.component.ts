@@ -7,8 +7,11 @@ import { Component,
     AfterContentChecked,
     AfterViewInit,
     AfterViewChecked,
-    OnDestroy } from '@angular/core';
+    OnDestroy, 
+    Output,
+    EventEmitter} from '@angular/core';
 import { User } from '../model/user';
+
 
 @Component({
     selector : 'app-user',
@@ -28,6 +31,12 @@ OnDestroy{
     @Input("xyz") xyz : string;
     @Input("users") users : User;
     @Input("abc") title : string;
+
+    @Output ('childEvent') childEvent = new EventEmitter();
+
+    onKeyUp(value: string){
+        this.childEvent.emit(value);
+    }
     tab : any;
     myStyle = {
         
