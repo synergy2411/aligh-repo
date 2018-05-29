@@ -52,7 +52,9 @@
     <ng-template #ElseTemplate>
         {{user.firstName }} is not working now!!!
     </ng-template>
-    
+
+    <app-comment-form [comments]="user.comments" ></app-comment-form>
+
 </li>
 </ul>
 </div>

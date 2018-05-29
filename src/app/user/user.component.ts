@@ -9,7 +9,8 @@ import { Component,
     AfterViewChecked,
     OnDestroy, 
     Output,
-    EventEmitter} from '@angular/core';
+    EventEmitter,
+    SimpleChanges} from '@angular/core';
 import { User } from '../model/user';
 
 
@@ -54,7 +55,7 @@ OnDestroy{
     }
     constructor(){console.log("Constructor Called!")}
     ngOnInit(){console.log("ngOnInit Called!");}
-    ngOnChanges(){console.log("ngOnChanges Called!");}
+    ngOnChanges(changes : SimpleChanges){console.log("ngOnChanges Called!", changes);}
     ngDoCheck(){console.log("ngDoCheck Called!");}
     ngAfterContentInit(){console.log("ngAfterContentInit Called!");}
     ngAfterContentChecked(){console.log("ngAfterContentChecked Called!");}

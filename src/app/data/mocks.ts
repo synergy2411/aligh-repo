@@ -9,7 +9,16 @@ export const USER_DATA : User[] =  [{
     isWorking : true,
     img : 'assets/images/bill.jpg', 
     vote : 120,
-    mobile : 9877654321
+    mobile : 9877654321,
+    comments : [{
+        stars : 3,
+        body : "I like Mr. Gates!",
+        author : "test@test.com"
+    },{
+        stars : 4,
+        body : "I Love Mr. Gates!",
+        author : "abc@test.com"
+    }]
 },{
     firstName : "Steve",
     lastName : "Jobs",
@@ -19,7 +28,16 @@ export const USER_DATA : User[] =  [{
     isWorking : false,
     img : 'assets/images/steve.png', 
     vote : 180,
-    mobile : 9877654321
+    mobile : 9877654321,
+    comments : [{
+        stars : 3,
+        body : "I like Mr. Steve!",
+        author : "test@test.com"
+    },{
+        stars : 4,
+        body : "I Love Mr. Steve!",
+        author : "abc@test.com"
+    }]
 },{
     firstName : "Tim B.",
     lastName : "Lee",
@@ -28,5 +46,14 @@ export const USER_DATA : User[] =  [{
     company : "World Wide Web",
     isWorking : true,
     img : 'assets/images/tim.jpg', 
-    vote : 150
+    vote : 150,
+    comments : [{
+        stars : 3,
+        body : "I like Mr. Tim!",
+        author : "test@test.com"
+    },{
+        stars : 4,
+        body : "I Love Mr. Tim!",
+        author : "abc@test.com"
+    }]
 }]

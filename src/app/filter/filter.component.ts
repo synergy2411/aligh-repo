@@ -8,6 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class FilterComponent implements OnInit {
   filteredStatus = "";
 
+  someData = new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+      resolve(101);
+    }, 2000);
+  });
+
   addNewTodo(){
     this.todos.push({label:"New Work", status: "pending"});
   }

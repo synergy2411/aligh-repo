@@ -1,3 +1,5 @@
+import { Comment } from './comment';
+
 export interface User {
     firstName : string;
     lastName : string;
@@ -9,4 +11,5 @@ export interface User {
     vote : number;
     address? : string;
     mobile? : number;
+    comments : Comment[];
 }

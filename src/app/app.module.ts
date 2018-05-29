@@ -9,6 +9,7 @@ import { UnlessDirective } from './directives/unless.directive';
 import { NationalCodePipe } from './pipes/country-code.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { FilterComponent } from './filter/filter.component';
+import { CommentFormComponent } from './user/comment-form/comment-form.component';
 
 @NgModule({
   declarations: [   //Components, Pipes & Directives
@@ -18,7 +19,8 @@ import { FilterComponent } from './filter/filter.component';
     UnlessDirective,
     NationalCodePipe,
     FilterPipe,
-    FilterComponent
+    FilterComponent,
+    CommentFormComponent
   ],
   imports: [      //All Modules : Built-in & Custom
     BrowserModule,

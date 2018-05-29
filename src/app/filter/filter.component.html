@@ -1,12 +1,19 @@
 
+<h2>ome data :  {{ someData | async}}</h2>
+
+
 <input type="text" [(ngModel)]="filteredStatus">
+<!-- <input type="text" 
+ (keyup)="filteredStatus=$event.target.value" 
+    [ngModel]="filteredStatus"> -->
 <hr>
 
 <button class="btn btn-default" (click)="addNewTodo()">Add New Todo</button>
 <hr>
 
 <ul class="list-group">
-  <li *ngFor="let todo of todos | filter : filteredStatus : 'status'" class="list-group-item">
+  <li *ngFor="let todo of todos | filter : filteredStatus : 'status'" 
+    class="list-group-item">
     {{todo.label}}
     <span class="badge">
       {{todo.status}}
