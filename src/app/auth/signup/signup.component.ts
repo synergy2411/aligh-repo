@@ -27,6 +27,7 @@ export class SignupComponent implements OnInit {
   onSubmit(){
     console.log("Form Submitted!");
     console.log(this.registerForm);
+    //this.username.valueChanges.subscribe(data=>console.log(data));
   }
 
   constructor(private fb : FormBuilder) { 

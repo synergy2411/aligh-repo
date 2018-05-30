@@ -55,7 +55,7 @@ export class UserComponent implements OnInit{
     }
 
    // constructor(){console.log("Constructor Called!")}
-    // ngOnInit(){console.log("ngOnInit Called!");}
+    ngOnInit(){console.log("ngOnInit Called!");}
     // ngOnChanges(changes : SimpleChanges){console.log("ngOnChanges Called!", changes);}
     // ngDoCheck(){console.log("ngDoCheck Called!");}
     // ngAfterContentInit(){console.log("ngAfterContentInit Called!");}

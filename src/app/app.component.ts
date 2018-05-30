@@ -28,6 +28,7 @@ export class AppComponent {
         (error)=>console.log("ERROR", error),
         ()=>console.log("COMPLETED!!")
       )
+    this.dataService.getApiData();
   }
 
 }

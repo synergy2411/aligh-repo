@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
@@ -13,6 +14,8 @@ import { FilterComponent } from './filter/filter.component';
 import { CommentFormComponent } from './user/comment-form/comment-form.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { DataService } from './services/data-service';
+import { ObsDemoComponent } from './obs-demo/obs-demo.component';
+import { AuthInterceptor } from './services/auth-interceptor';
 
 @NgModule({
   declarations: [   //Components, Pipes & Directives
@@ -24,16 +27,23 @@ import { DataService } from './services/data-service';
     FilterPipe,
     FilterComponent,
     CommentFormComponent,
-    SignupComponent
+    SignupComponent,
+    ObsDemoComponent
   ],
   imports: [      //All Modules : Built-in & Custom
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    HttpClientModule
   ],
   providers: [
-    DataService
+    DataService,
+    {
+      provide : HTTP_INTERCEPTORS,
+      useClass : AuthInterceptor,
+      multi : true
+    }
   ],   //Services 
   bootstrap: [AppComponent]
 })
