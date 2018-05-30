@@ -1,17 +1,33 @@
 <!--The content below is only a placeholder and can be replaced.-->
+
+<div class="container">
+  <ul class="list-unstyled nav navbar-nav navbar-default">
+    <li><a [routerLink]="['']">Home</a></li>
+    <li><a [routerLink]="['login']">Login</a></li>
+    <li><a [routerLink]="['filter']">Filter Demo</a></li>
+    <li><a [routerLink]="['obs-demo']">Observable Demo</a></li>
+    <li><a [routerLink]="['product']">Product</a></li>
+  </ul>
+
+</div>
+
 <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
   </h1>
 </div>
 
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
 <!-- <div class="container">
   <app-obs-demo></app-obs-demo>
 </div> -->
 
-<div class="container">
+<!-- <div class="container">
   <app-signup></app-signup>
-</div>
+</div> -->
 
 
 <!-- <div class="container">

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
@@ -17,6 +18,8 @@ import { DataService } from './services/data-service';
 import { ObsDemoComponent } from './obs-demo/obs-demo.component';
 import { AuthInterceptor } from './services/auth-interceptor';
 import { AuthService } from './services/auth-service';
+import { ProductComponent } from './product/product.component';
+import { APP_ROUTES } from './app.routing';
 
 @NgModule({
   declarations: [   //Components, Pipes & Directives
@@ -29,14 +32,16 @@ import { AuthService } from './services/auth-service';
     FilterComponent,
     CommentFormComponent,
     SignupComponent,
-    ObsDemoComponent
+    ObsDemoComponent,
+    ProductComponent
   ],
   imports: [      //All Modules : Built-in & Custom
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(APP_ROUTES)
   ],
   providers: [
     DataService,
