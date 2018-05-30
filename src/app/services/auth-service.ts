@@ -29,6 +29,7 @@ export class AuthService{
     }
 
     getToken(){
+        console.log(firebase.auth().currentUser.refreshToken)
         firebase.auth().currentUser.getIdToken()
             .then(token=>{
                 console.log(token);

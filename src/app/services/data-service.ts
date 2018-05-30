@@ -22,7 +22,10 @@ export class DataService{
      //   return USER_DATA;
     }
     getApiData(){
-        this.httpClient.get("https://ng-app-dedd9.firebaseio.com/userdata.json?auth="+this.authService.getToken())
+        // this.httpClient.get("https://ng-app-dedd9.firebaseio.com/userdata.json",{
+        //     headers : new HttpHeaders().set("auth", this.authService.getToken())
+        // })
+        this.httpClient.get<User[]>("https://ng-app-dedd9.firebaseio.com/userdata.json")
         .subscribe(
             data=>console.log(data), 
             (err)=>console.log(err));
