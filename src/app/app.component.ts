@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { User } from './model/user';
 import { DataService } from './services/data-service';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-root',
@@ -21,6 +22,11 @@ export class AppComponent {
   }
   constructor(public dataService : DataService){}
   ngOnInit(){
+    firebase.initializeApp({
+      apiKey: "AIzaSyADO3idaBcUuOqbEXayQ_12bxnoWHg_pQI",
+      authDomain: "ng-app-dedd9.firebaseapp.com"
+    });
+
    //this.users=  this.dataService.getUserData();
    this.dataService.getUserData()
       .subscribe(
@@ -28,7 +34,7 @@ export class AppComponent {
         (error)=>console.log("ERROR", error),
         ()=>console.log("COMPLETED!!")
       )
-    this.dataService.getApiData();
+   //this.dataService.getApiData();
   }
 
 }

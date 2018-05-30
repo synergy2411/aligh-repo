@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormGroup, 
         FormBuilder, Validators } from '@angular/forms';
+import { AuthService } from '../../services/auth-service';
+import { DataService } from '../../services/data-service';
 
 @Component({
   selector: 'app-signup',
@@ -27,10 +29,24 @@ export class SignupComponent implements OnInit {
   onSubmit(){
     console.log("Form Submitted!");
     console.log(this.registerForm);
+    this.authService.signup(
+      this.registerForm.value.username, 
+      this.registerForm.value.password)
     //this.username.valueChanges.subscribe(data=>console.log(data));
   }
 
-  constructor(private fb : FormBuilder) { 
+  signin(){
+    this.authService.signin(
+      this.registerForm.value.username, 
+      this.registerForm.value.password);
+  }
+
+  getData(){
+    this.dataService.getApiData();
+  }
+  constructor(private fb : FormBuilder,
+        private authService : AuthService,
+        private dataService : DataService) { 
     this.registerForm = this.fb.group({
       username : this.username,
       password : this.password

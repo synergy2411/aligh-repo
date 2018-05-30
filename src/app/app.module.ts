@@ -16,6 +16,7 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { DataService } from './services/data-service';
 import { ObsDemoComponent } from './obs-demo/obs-demo.component';
 import { AuthInterceptor } from './services/auth-interceptor';
+import { AuthService } from './services/auth-service';
 
 @NgModule({
   declarations: [   //Components, Pipes & Directives
@@ -43,7 +44,8 @@ import { AuthInterceptor } from './services/auth-interceptor';
       provide : HTTP_INTERCEPTORS,
       useClass : AuthInterceptor,
       multi : true
-    }
+    },
+    AuthService
   ],   //Services 
   bootstrap: [AppComponent]
 })
