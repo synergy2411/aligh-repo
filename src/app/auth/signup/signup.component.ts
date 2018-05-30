@@ -1,16 +1,22 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { FormControl, FormGroup, 
         FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth-service';
 import { DataService } from '../../services/data-service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css'],
-  encapsulation : ViewEncapsulation.Emulated
+  encapsulation : ViewEncapsulation.Emulated,
+  changeDetection : ChangeDetectionStrategy.OnPush
 })
 export class SignupComponent implements OnInit {
+
+  htmlSnippets = "Template : <script>alert('Hello')</script> Syntax";
+  dangerUrl : string = "javascript:alert('Hello')"
+  trustedUrl : any;
 
   username = new FormControl('',[
     Validators.required,
@@ -46,7 +52,11 @@ export class SignupComponent implements OnInit {
   }
   constructor(private fb : FormBuilder,
         private authService : AuthService,
-        private dataService : DataService) { 
+        private dataService : DataService, 
+        private sanitizer : DomSanitizer,
+      private cdRef : ChangeDetectorRef) {
+        this.cdRef.detach(); 
+        this.trustedUrl = this.sanitizer.bypassSecurityTrustUrl(this.dangerUrl);
     this.registerForm = this.fb.group({
       username : this.username,
       password : this.password

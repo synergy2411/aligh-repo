@@ -1,4 +1,16 @@
 
+
+
+Interpolation : {{ htmlSnippets }}
+<hr>
+Property Binding : <p [innerHTML]="htmlSnippets"></p>
+
+<br>
+<a [href]="trustedUrl">Trusted URL Alert</a>
+<a [href]="dangerUrl">Danger URL Alert</a>
+<br>
+<br>
+
 <form 
   class="well" 
   [formGroup]="registerForm">
@@ -10,7 +22,7 @@
       name="username" 
       class="form-control"
       [formControl]="username">
-      {{errorMsg}}
+   
       <div [hidden]="username.valid || username.pristine">
         Something Wrong happened!
         <div [hidden]="!username.hasError('required')">
