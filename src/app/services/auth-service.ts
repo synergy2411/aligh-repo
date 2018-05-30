@@ -38,5 +38,9 @@ export class AuthService{
             .catch(err=>console.log(err));
         return this.token;
     }
+
+    isAuthenticated(){
+        return this.token != null;
+    }
 }
 
